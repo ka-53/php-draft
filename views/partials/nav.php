@@ -7,14 +7,14 @@
           </div>
           <div class="hidden md:block">
             <div class="ml-10 flex items-baseline space-x-4">
-              <a href="index.php" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white" aria-current="page">Home</a>
+              <a href="index.php" class="<?php if($_SERVER['REQUEST_URI'] === '/draft/index.php'){ echo 'bg-gray-900 text-white'; }else{ echo 'text-gray-300'; } ?>-md bg-gray-900 px-3 py-2 text-sm font-medium text-white" aria-current="page">Home</a>
               <a href="about.php" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white" aria-current="page">About</a>
               <a href="contact.php" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white" aria-current="page">Contact</a>
               
             </div>
           </div>
         </div>
-        <!-- Остальной код навигации -->
+        
       </div>
     </div>
-  
+</nav>
