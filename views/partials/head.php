@@ -6,7 +6,6 @@
     <title>demo</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <base href="/draft/">
-    <link rel="stylesheet" href="style.css">
 </head>
 <body class="h-full">
 <div class="min-h-full">

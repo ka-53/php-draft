@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteBase /draft/
+RewriteRule ^$ index.php [L]
+RewriteRule (.*) index.php [QSA,L]

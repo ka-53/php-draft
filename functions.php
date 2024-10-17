@@ -1,5 +1,5 @@
 <?php
-function dd($value){
+function dd($x){
     echo "<pre>";
     var_dump($_SERVER);
     echo "</pre>";
@@ -8,5 +8,5 @@ function dd($value){
 }
 
 function url($x){
-    return $_SERVER['REQUEST_URI'] === $x;
+    return $_SERVER['REQUEST_URI'] === "/$x";
 }
