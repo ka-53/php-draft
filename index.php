@@ -1,18 +1,15 @@
 <?php
- require 'functions.php';
+require 'functions.php';
 
- //echo "REQUEST_URI: " . $_SERVER['REQUEST_URI'] . "<br>";
+$a = $_SERVER['REQUEST_URI'];
 
 
- $a = $_SERVER['REQUEST_URI'];
-
- if ($a === "/draft/" || $a === "/draft/index"){
+if ($a === "/draft/" || $a === "/draft/index" || $a === "/draft/index/") {
     require "controllers/index.php";
-
- }else if($a === "/draft/about") {
+} else if ($a === "/draft/about" || $a === "/draft/about/") {
     require "controllers/about.php";
- }else if($a === "/draft/contact") {
+} else if ($a === "/draft/contact" || $a === "/draft/contact/") {
     require "controllers/contact.php";
- }else{
+} else {
     echo "error";
- }
+}
