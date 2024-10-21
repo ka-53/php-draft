@@ -7,10 +7,11 @@
           </div>
           <div class="hidden md:block">
             <div class="ml-10 flex items-baseline space-x-4">
-              <a href="/draft/controllers/index.php" class="<?php echo url('index.php') ? 'bg-gray-900 text-white' :  'text-gray-300';  ?> rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white" aria-current="page">Home</a>
-              <a href="/draft/controllers/about.php" class="<?php echo url('about.php') ? 'bg-gray-900 text-white' :  'text-gray-300';  ?> rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white" aria-current="page">About</a>
-              <a href="/draft/controllers/contact.php" class="<?php echo url('contact.php') ? 'bg-gray-900 text-white' :  'text-gray-300';  ?> rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white" aria-current="page">Contact</a>
               
+            <a href="/draft/controllers/index.php" class="<?php echo strpos($_SERVER['REQUEST_URI'], 'index.php') !== false ? 'bg-gray-900 text-white' : 'text-gray-300'; ?> rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Home</a>
+            <a href="/draft/controllers/about.php" class="<?php echo strpos($_SERVER['REQUEST_URI'], 'about.php') !== false ? 'bg-gray-900 text-white' : 'text-gray-300'; ?> rounded-md px-3 py-2 text-sm font-medium" aria-current="page">About</a>
+            <a href="/draft/controllers/contact.php" class="<?php echo strpos($_SERVER['REQUEST_URI'], 'contact.php') !== false ? 'bg-gray-900 text-white' : 'text-gray-300'; ?> rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Contact</a>
+
             </div>
           </div>
         </div>
