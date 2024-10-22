@@ -1,15 +1,13 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-
-// Определите переменную $home для страницы "About"
-$home = 'About'; // Вы можете задать любое значение, которое хотите
-
-require('partials/head.php');  
-require('partials/nav.php'); 
-require('partials/banner.php'); // Здесь $home будет доступна
-
 ?>
+
+<?php require('partials/head.php') ?>
+  
+<?php require('partials/nav.php') ?>
+
+<?php require('partials/banner.php') ?>
 
 <main>
   <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
@@ -17,4 +15,4 @@ require('partials/banner.php'); // Здесь $home будет доступна
   </div>
 </main>
 
-<?php require('partials/footer.php'); ?>
+<?php require('partials/footer.php') ?>
