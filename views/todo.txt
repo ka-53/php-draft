@@ -1,1 +1,1 @@
-fix links about,home,contact still
+finish router kjkj;
