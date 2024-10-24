@@ -1,15 +1,20 @@
 <?php
 require 'functions.php';
 
-$a = $_SERVER['REQUEST_URI'];
+// Убираем слэши в начале и конце строки, чтобы сопоставить маршруты
+$a = rtrim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
 
+$routes = [
+    '/draft' => 'controllers/index.php',
+    '/draft/index' => 'controllers/index.php',
+    '/draft/about' => 'controllers/about.php',
+    '/draft/contact' => 'controllers/contact.php'
+];
 
-if ($a === "/draft/" || $a === "/draft/index" || $a === "/draft/index/") {
-    require "controllers/index.php";
-} else if ($a === "/draft/about" || $a === "/draft/about/") {
-    require "controllers/about.php";
-} else if ($a === "/draft/contact" || $a === "/draft/contact/") {
-    require "controllers/contact.php";
+if (array_key_exists($a, $routes)) {
+    require $routes[$a];
 } else {
-    echo "error";
+   http_response_code(404);
+   require 'views/404.php';
+   die();
 }
