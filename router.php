@@ -16,7 +16,7 @@ $routes = [
 
 function routeToController($a, $routes) {
     if (array_key_exists($a, $routes)) {
-        require $routes[$a];
+        require $routes[$a]; 
     } else {
         abort();
     }
@@ -24,7 +24,8 @@ function routeToController($a, $routes) {
 
 function abort() {
     http_response_code(404);
-    require 'views/404.php';
+    echo "404 - Page Not Found";
+    require __DIR__ . '/views/404.php';
     die();
 }
 
