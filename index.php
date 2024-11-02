@@ -20,19 +20,50 @@ require 'functions.php';
 //    die();
 // }
 
+// $servername = "localhost";
+// $username = "administrator";
+// $password = "";
+// $dbname = "php";
 
-class Person {
-    public $name;
-    public $age;
+// // Create connection
+// $conn = new mysqli($servername, $username, $password, $dbname);
 
-    public function breathe(){
-        echo "breathing";
-    }
+// // Check connection
+// if ($conn->connect_error) {
+//     die("Connection failed: " . $conn->connect_error);
+// }
+
+// // Fetch values from the form
+// $firstName = $_POST['first_name'];
+// $lastName = $_POST['last_name'];
+// $gender = isset($_POST['gender']) ? $_POST['gender'] : ''; // assuming it's optional
+// $address = $_POST['address'];
+// $email = $_POST['email'];
+
+// // Insert data into the customers table
+// $sql = "INSERT INTO customers (first_name, last_name, gender, address, email) VALUES ('$firstName', '$lastName', '$gender', '$address', '$email')";
+
+// if ($conn->query($sql) === TRUE) {
+//     echo "Record inserted successfully";
+// } else {
+//     echo "Error: " . $sql . "<br>" . $conn->error;
+// }
+
+// // Close connection
+// $conn->close();
+
+$dsn = "mysql:host=localhost;port=3306;dbname=php;user=root;charset=utf8mb4";
+$pdo = new PDO($dsn);
+$statment = $pdo->prepare("select * from users");
+$statment->execute();
+$posts = $statment->fetchAll(PDO::FETCH_ASSOC);
+
+
+#dd($posts);
+
+foreach ($posts as $p){
+    echo "<li>" . htmlspecialchars($p['title']) . "</li>";
 }
 
-$p = new Person();
-
-$p->name = 'Adilet';
-$p->age = 21;
-
-dd($p->name);
+#var_dump($posts);
+#exit;
